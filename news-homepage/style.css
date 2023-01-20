@@ -1,0 +1,256 @@
+:root {
+    --soft-orange: hsl(35, 77%, 62%);
+    --soft-red: hsl(5, 85%, 63%);
+    --white: hsl(36, 100%, 99%);
+    --grayish-blue: hsl(233, 8%, 79%);
+    --dark-grayish-blue: hsl(236, 13%, 42%);
+    --very-dark-blue: hsl(240, 100%, 5%);
+}
+
+body{
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.container {
+    width: 96%;
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 72px;
+}
+
+/* Header */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .desktop-nav {
+    display: flex;
+    gap: 36px;
+}
+
+header .desktop-nav a {
+    color: var(--dark-grayish-blue);
+}
+
+header .hamburger-menu-open{
+    display: none;
+}
+
+.hamburger-menu-wrapper {
+    display: none;
+}
+
+/* Main */
+
+main {
+    display: grid;
+    margin-top: 72px;
+    gap: 24px;
+}
+
+/* Featured New */
+
+section#featured-new h1 {
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 36px;
+    color: var(--very-dark-blue);
+    flex: 1;
+}
+
+.featured-content {
+    margin-top: 24px;
+}
+
+.featured-content .featured-desc {
+    flex: 1;
+}
+
+.featured-content .featured-desc p {
+    color: var(--dark-grayish-blue);
+}
+
+.featured-content .featured-desc button {
+    background-color: var(--soft-red);
+    padding: 12px 24px;
+    color: var(--white);
+    margin-top: 24px;
+    letter-spacing: 1.75px;
+    text-transform: uppercase;
+}
+
+/* News Sidebar */
+
+section#news-sidebar {
+    background-color: var(--very-dark-blue);
+    color: var(--white);
+    padding: 16px;
+}
+
+section#news-sidebar .sidebar-item:not(:last-child) {
+    border-bottom: 1px solid var(--dark-grayish-blue);
+    padding-bottom: 16px;
+}
+
+section#news-sidebar .sidebar-item:not(:nth-child(2)) {
+    padding-top: 16px;
+}
+
+section#news-sidebar h2{
+    color: var(--soft-orange);
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.sidebar-item h4 {
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.sidebar-item p {
+    color: var(--dark-grayish-blue);
+    font-size: 12px;
+}
+
+
+/* News Bottom */
+
+section#news-bottom {
+    margin-top: 72px;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+section#news-bottom .bottom-item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.bottom-item .bottom-content .news-number {
+    color: var(--dark-grayish-blue);
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.bottom-item .bottom-content h3 {
+    color: var(--very-dark-blue);
+    font-weight: 800;
+}
+
+.bottom-item .bottom-content .news-bottom-desc {
+    color: var(--dark-grayish-blue);
+    font-size: 12px;
+}
+
+@media (min-width: 500px) {
+    main {
+        grid-template-areas:
+          "featuredNew featuredNew newsSidebar"
+          "newsBottom newsBottom newsBottom";
+    }
+
+    section#featured-new {
+        grid-area: featuredNew;
+    }
+
+    section#news-sidebar {
+        grid-area: newsSidebar;
+    }
+    
+    section#news-bottom {
+        grid-area: newsBottom;
+    }
+
+    .featured-content {
+        display: flex;
+        gap: 24px;
+    }
+
+    .featured-content h1{
+        max-width: 10ch;
+    }
+
+    .featured-content .featured-desc p {
+        max-width: 40ch;
+    }
+}
+
+@media (max-width: 500px) { 
+    .featured-desc {
+        margin-top: 12px;
+    }
+
+    #news-bottom{
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .bottom-image {
+        flex: 1;
+    }
+
+    .bottom-content {
+        flex: 2;
+    }
+
+    header .desktop-nav {
+        display: none;
+    }
+
+    header .hamburger-menu-open { 
+        display: block;
+    }
+
+    .hamburger-menu-wrapper {
+        display: none;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 100%;
+    }
+
+    .open {
+        display: flex;
+        left: 0;
+    }
+
+    .mobile-nav-wrapper {
+        flex: 3;
+        background-color: var(--white);
+    }
+
+    .overlay {
+        flex: 1;
+        background-color:rgba(0, 0, 0, 0.4);
+    }
+
+    .mobile-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        margin-top: 72px;
+        margin-left: 24px;
+    }
+
+    .mobile-nav a {
+        color: var(--very-dark-blue);
+    }
+
+    .hamburger-menu-close {
+        margin-left: auto;
+        margin-top: 24px;
+        margin-right: 24px;
+    }
+
+}
