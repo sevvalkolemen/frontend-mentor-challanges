@@ -1,0 +1,141 @@
+:root {
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+    --white: hsl(0, 0%, 100%);
+
+    /* Main BG */
+    --bg-very-dark-blue: hsl(217, 54%, 11%);
+
+    /* Card BG */
+    --card-very-dark-blue: hsl(216, 50%, 16%);
+
+    /* Line */
+    --line-very-dark-blue: hsl(215, 32%, 27%);
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg-very-dark-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 320px;
+    padding: 16px;
+    border-radius: 16px;
+    background-color: var(--card-very-dark-blue);
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+.images {
+    position: relative;
+    cursor: pointer;
+}
+
+.card .card-img {
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card .images .card-img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--cyan);
+    border-radius: 8px;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
+}
+
+.card .images:hover .card-img-overlay {
+    opacity: 0.5;
+}
+
+.card .images .card-img-overlay img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.card-body h1 {
+    font-size: 20px;
+    color: var(--white);
+    font-weight: 600;
+}
+
+.card-body h1:hover {
+    cursor: pointer;
+    color: var(--cyan);
+}
+
+.card-body .card-desc {
+    color: var(--soft-blue);
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.card-body .card-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line-very-dark-blue);
+    padding-bottom: 24px;
+}
+
+.card-body .card-content .card-content-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.card-body .card-content .card-content-item .eth-paragraph {
+    color: var(--cyan);
+    font-weight: 500;
+}
+
+.card-body .card-content .card-content-item .day-paragraph {
+    color: var(--soft-blue);
+}
+
+.card-footer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.card-footer .card-footer-img {
+    height: 40px;
+    width: 40px;
+    border: 1px solid var(--white);
+    border-radius: 9999px;
+}
+
+.card-footer p {
+    color: var(--soft-blue);
+}
+
+.card-footer p span {
+    color: var(--white);
+}
+
+.card-footer p span:hover {
+    cursor: pointer;
+    color: var(--cyan);
+}
